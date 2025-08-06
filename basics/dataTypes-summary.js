@@ -38,3 +38,28 @@ const myFunction = function(){
 console.log(typeof myFunction); // print function, but known as function object
 
 
+// ************* MEMORY ***********
+
+// Stack (Primitive) => we get copy of variables
+// Heap (Non-Primitive) => By reference
+
+let Myname = "Ankit"
+let anotherName = Myname
+console.log(anotherName); // output Ankit
+anotherName = "Ankuu"
+console.log(Myname); // output Ankit
+console.log(anotherName); // output Ankuu
+// These are stored in stack
+
+let userOne = {
+    email : "user@google.com",
+    upi : "user@ybl"
+}
+let userTwo = userOne // will also take reference to the same object pointer by userOne in the heap memory
+userTwo.email  = "ankit@google.com"
+
+console.log(userOne.email); // ankit@google.com
+console.log(userTwo.email); // ankit@google.com
+
+
+
